@@ -10,7 +10,7 @@ Project Goals
     
     - Security: Enforce strict file permissions on sensitive configuration files using Terraform.
 
-Tech Stack
+Tech Stack 💻
 
     - Technology: Terraform (Local Provider Module)
 
@@ -22,7 +22,7 @@ Tech Stack
 
     - Version Control: Git
 
-Security Implementation
+Security Implementation 🔒
 
 As this project is developed within a Cybersecurity framework, DotGuard implements:
 
@@ -30,7 +30,7 @@ As this project is developed within a Cybersecurity framework, DotGuard implemen
 
     - Privilege: Configurations are deployed with explicit permissions (0600 for sensitive configs) to prevent unauthorized local read access.
 
-Quick Start
+Quick Start 🚀
 
     1. Clone the repository:
         git clone https://github.com/sj-0306/DotGuard.git
