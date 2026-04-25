@@ -1,16 +1,16 @@
 DotGuard
 
-DotGuard is a declarative configuration management system built with Terraform. It treats Linux desktop environments and window managers as "Infrastructure as Code", ensuring that system configurations and dotfiles are version controlled, reproducible, and are securely deployable.
+DotGuard is a configuration management system built with Terraform. It treats Linux desktop environments and window managers as "Infrastructure as Code", ensuring that system configurations and dotfiles are version controlled, reproducible, and are securely deployable.
 
 Project Goals
 
-    - Consistency: Ensure the system state always matches the configuration source of truth.
+    - Consistency: Ensure the system state always matches the configuration 
     
-    - Portability: Rapidly deploy a consistent, custom Fedora/Hyprland environment on new hardware.
+    - Portability: Rapidly deploy a consistent, custom Fedora/Hyprland environment on new hardware
     
-    - Security: Enforce strict file permissions on sensitive configuration files using Terraform.
+    - Security: Enforce strict file permissions on sensitive configuration files using Terraform
 
-Tech Stack 💻
+Tech Stack 
 
     - Technology: Terraform (Local Provider Module)
 
@@ -22,15 +22,15 @@ Tech Stack 💻
 
     - Version Control: Git
 
-Security Implementation 🔒
+Security Implementation 
 
 As this project is developed within a Cybersecurity framework, DotGuard implements:
 
-    - Exclusion: .tfstate files are gitignored to prevent sensitive data leakage to public repositories.
+    - Exclusion: .tfstate files are gitignored to prevent sensitive data leakage to public repositories
 
-    - Privilege: Configurations are deployed with explicit permissions (0600 for sensitive configs) to prevent unauthorized local read access.
+    - Privilege: Configurations are deployed with explicit permissions (0600 for sensitive configs) to prevent unauthorized local read access
 
-Quick Start 🚀
+Quick Start 
 
     1. Clone the repository:
         git clone https://github.com/sj-0306/DotGuard.git
