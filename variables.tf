@@ -1,7 +1,7 @@
 variable "dotfiles" {
   type = map(object({
-    source_path = string
+    source_path      = string
     destination_path = string
-    mode = optional(string, "0600")
+    mode             = optional(string, "0600")
   }))
 }
