@@ -12,7 +12,7 @@ Project Goals
 
 Tech Stack 
 
-    - Technology: Terraform (Local Provider Module)
+    - Technology: Terraform (Local Provider Module), Prometheus 
 
     - Operating System: Fedora Linux
 
@@ -21,6 +21,8 @@ Tech Stack
     - Terminal Emulator: Kitty
 
     - Version Control: Git
+    
+    - Monitoring: Grafana
 
 Security Implementation 
 
