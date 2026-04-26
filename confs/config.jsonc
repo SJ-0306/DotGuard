@@ -1,0 +1,29 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 35,
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+    "margin-bottom": 10,
+    "spacing": 0,
+
+    "modules-left": ["clock#date"],
+    "modules-center": ["hyprland/workspaces"], 
+    "modules-right": ["clock#time"],
+
+    "clock#date": {
+        "format": "{:%A, %B %d}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+
+    "clock#time": {
+        "format": "{:%I:%M %p}"
+    },
+
+    "hyprland/workspaces": {
+        "format": "●", // This replaces the number with a circle
+        "on-click": "activate",
+        "all-outputs": true
+    }
+}
