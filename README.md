@@ -30,6 +30,20 @@ As this project is developed within a Cybersecurity framework, DotGuard implemen
 
     - Privilege: Configurations are deployed with explicit permissions (0600 for sensitive configs) to prevent unauthorized local read access
 
+Automation and Observability
+
+    - Using systemd timers to automate a audit bash script to automatically apply file permissions to the appropriate files via terraform.tfvars
+    
+    - Leverages Prometheus to scrape the output of the audit bash script via the Prometheus Node Exporter
+    
+    - Grafana "stat" shows the Prometheus data in a dashboard with colour coded thresholds to identify proper perms
+        
+        + Green    (600)    - strictest access
+        + Yellow   (644)    - standard read write access
+        + Red      (700+)   - UNSECURE acess
+        
+<img width="2559" height="1598" alt="Grafana" src="https://github.com/user-attachments/assets/901fa4b1-d808-4461-87a2-095d9db5b4e3" />
+<br>
 Quick Start 
 
     1. Clone the repository:
