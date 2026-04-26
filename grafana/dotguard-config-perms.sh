@@ -1,8 +1,17 @@
+#!/bin/bash
+OUTPUT_FILE="/var/lib/node_exporter/textfile_collector/dotguard.prom"
+> "$OUTPUT_FILE"
 
-KITTY_PERMS=$(stat -c "%a" /home/swami/.config/kitty/kitty.conf)
-HYPR_PERMS=$(stat -c "%a" /home/swami/.config/hypr/hyprland.conf)
-BASH_PERMS=$(stat -c "%a" /home/swami/.bashrc)
+declare -A CONFIGS=(
+    ["kitty"]="$HOME/.config/kitty/kitty.conf"
+    ["hyprland"]="$HOME/.config/hypr/hyprland.conf"
+    ["bashrc"]="$HOME/.bashrc"
+    ["waybarconfig"]="$HOME/.config/waybar/config.jsonc"
+    ["waybarcolor"]="$HOME/.config/waybar/colors.css"
+    ["waybarstyle"]="$HOME/.config/waybar/style.css"
+)
 
-echo "dotguard_config_permissions{file=\"kitty\"} $KITTY_PERMS" > /var/lib/node_exporter/textfile_collector/dotguard.prom
-echo "dotguard_config_permissions{file=\"hyprland\"} $HYPR_PERMS" >> /var/lib/node_exporter/textfile_collector/dotguard.prom
-echo "dotguard_config_permissions{file=\"bashrc\"} $BASH_PERMS" >> /var/lib/node_exporter/textfile_collector/dotguard.prom
+for NAME in "${!CONFIGS[@]}"; do
+    PERMS=$(stat -c "%a" "${CONFIGS[$NAME]}" 2>/dev/null || echo "0")
+    echo "dotguard_config_permissions{file=\"$NAME\"} $PERMS" >> "$OUTPUT_FILE"
+done
