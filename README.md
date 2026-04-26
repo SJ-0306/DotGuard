@@ -12,7 +12,7 @@ Project Goals
 
 Tech Stack 
 
-    - Technology: Terraform (Local Provider Module)
+    - Technology: Terraform (Local Provider Module), Prometheus 
 
     - Operating System: Fedora Linux
 
@@ -21,6 +21,8 @@ Tech Stack
     - Terminal Emulator: Kitty
 
     - Version Control: Git
+    
+    - Monitoring: Grafana
 
 Security Implementation 
 
@@ -32,7 +34,7 @@ As this project is developed within a Cybersecurity framework, DotGuard implemen
 
 Automation and Observability
 
-    - Using systemd timers to automate a audit bash script to automatically apply file permissions to the appropriate files via terraform.tfvars
+    - Automates security audits via Systemd Timers to ensure persistant file perms
     
     - Leverages Prometheus to scrape the output of the audit bash script via the Prometheus Node Exporter
     
@@ -40,9 +42,10 @@ Automation and Observability
         
         + Green    (600)    - strictest access
         + Yellow   (644)    - standard read write access
-        + Red      (700+)   - UNSECURE acess
+        + Red      (700+)   - UNSECURE access
         
 <img width="2559" height="1598" alt="Grafana" src="https://github.com/user-attachments/assets/901fa4b1-d808-4461-87a2-095d9db5b4e3" />
+<br>
 <br>
 Quick Start 
 
