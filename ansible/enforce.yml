@@ -1,0 +1,17 @@
+- name: Enforce Secure Dotfiles
+  hosts: localhost
+  tasks:
+    - name: Ensure config files have strict permissions
+      ansible.builtin.file:
+        path: "{{ item.path }}"
+        mode: "{{ item.mode }}"
+        owner: swami
+        group: swami
+      loop:
+        - { path: '/home/swami/.config/kitty/kitty.conf', mode: '0600' }
+        - { path: '/home/swami/.bashrc', mode: '0600' }
+        - { path: '/home/swami/.config/hypr/hyprland.conf', mode: '0600' }
+        - { path: '/home/swami/.config/waybar/colors.css', mode: '0600' }
+        - { path: '/home/swami/.config/waybar/style.css', mode: '0600' }
+        - { path: '/home/swami/.config/waybar/config.jsonc', mode: '0600' }
+
