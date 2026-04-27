@@ -1,6 +1,6 @@
 DotGuard
 
-DotGuard is a configuration management system built with Terraform. It treats Linux desktop environments and window managers as "Infrastructure as Code", ensuring that system configurations and dotfiles are version controlled, reproducible, and are securely deployable.
+DotGuard is a configuration management system built with Terraform, and configured by Ansible. It treats Linux desktop environments and window managers as "Infrastructure as Code", ensuring that system configurations and dotfiles are version controlled, reproducible, and are securely deployable.
 
 Project Goals
 
@@ -10,9 +10,11 @@ Project Goals
     
     - Security: Enforce strict file permissions on sensitive configuration files using Terraform
 
+    - Automation: Via systemd automating tasks to prevent drift
+
 Tech Stack 
 
-    - Technology: Terraform (Local Provider Module), Prometheus 
+    - Technology: Terraform (Local Provider Module), Prometheus, Ansible
 
     - Operating System: Fedora Linux
 
@@ -43,6 +45,8 @@ Automation and Observability
         + Green    (600)    - strictest access
         + Yellow   (644)    - standard read write access
         + Red      (700+)   - UNSECURE access
+    
+    - Utilizes Ansible for file configuration 
         
 <img width="2559" height="1598" alt="Grafana" src="https://github.com/user-attachments/assets/901fa4b1-d808-4461-87a2-095d9db5b4e3" />
 <br>
