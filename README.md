@@ -47,7 +47,8 @@ Automation and Observability
     
     - Enforce: Utilizes Ansible via Systemd timer to automatically enforcing a self-healing system
         
-<img width="2559" height="1598" alt="Grafana" src="https://github.com/user-attachments/assets/901fa4b1-d808-4461-87a2-095d9db5b4e3" />
+<img width="2559" height="1599" alt="grafana" src="https://github.com/user-attachments/assets/04e4ba79-f37a-4e45-b8e7-2a1f85cec40a" />
+
 <br>
 <br>
 
